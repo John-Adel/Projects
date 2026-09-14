@@ -4,7 +4,7 @@ import numpy as np
 
 #convert it to gray scale
 
-originalImg = cv.imread(r"C:\Users\OC\OneDrive\Desktop\Folders\Projects\Python Programmer Bootcamp\Computer Vision Capstone\19.1 capstone_coins.png")
+originalImg = cv.imread(r"19.1 capstone_coins.png")
 originalImg = cv.resize(originalImg, (int(originalImg.shape[1] * 0.9), int(originalImg.shape[0] * 0.9)), interpolation=cv.INTER_AREA)
 # cv.imshow("Original Image", originalImg)
 cv.waitKey(0)
