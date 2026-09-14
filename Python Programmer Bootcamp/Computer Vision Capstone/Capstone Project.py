@@ -4,7 +4,7 @@ import numpy as np
 
 #convert it to gray scale
 
-originalImg = cv.imread("19.1 capstone_coins.png")
+originalImg = cv.imread(r"C:\Users\OC\OneDrive\Desktop\Folders\Projects\Python Programmer Bootcamp\Computer Vision Capstone\19.1 capstone_coins.png")
 originalImg = cv.resize(originalImg, (int(originalImg.shape[1] * 0.9), int(originalImg.shape[0] * 0.9)), interpolation=cv.INTER_AREA)
 # cv.imshow("Original Image", originalImg)
 cv.waitKey(0)
@@ -30,16 +30,7 @@ for circle in circles[0, :]:
     elif 60 < circle[2] < 70:
         output = cv.putText(output, "5p", (int(circle[0]), int(circle[1])), cv.FONT_HERSHEY_PLAIN, 3, (0, 0, 0), 2)
 
-
-#Edges 
-blurredImg = cv.GaussianBlur(grayscaleImg, (3, 3), cv.BORDER_DEFAULT)
-
-canny = cv.Canny(blurredImg, 10, 10)
-# cv.imshow("canny", canny)
-lines = cv.HoughLinesP(canny, 1, np.pi/180, 100)
-print(lines)
-for line in lines[0, :]:
-    output = cv.line(output, (int(line[0]), int(line[1])), (int(line[1]), int(line[2])), (0, 255, 0), 2)
 cv.imshow("output", output)
 cv.waitKey(0)
+
 
